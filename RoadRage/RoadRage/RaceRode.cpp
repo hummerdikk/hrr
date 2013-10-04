@@ -1,18 +1,12 @@
 #include "RaceRode.hpp"
 
-RaceRoad::RaceRoad(/*Player* player*/){
-	/*RaceRoad::player = player;*/
+RaceRoad::RaceRoad(){
 	road=generateRoad(1);
-	hori=1;vert=0;
-}
-
-RaceRoad::~RaceRoad(){
-	/*delete player;*/
+	hori=1;vert=0;life=10;
 }
 
 void RaceRoad::play(){
-	//RaceRoad myroad(Player p());
-	RaceRoad(/*new Player()*/);
+	RaceRoad();
 	represent();
 	short direction;
 	char ispressed(1);
@@ -42,7 +36,11 @@ void RaceRoad::play(){
 			break;
 		}
 		if(ispressed>0)moveCar(direction);
-		if(isHit())cout<<"HALAL"<<endl;
+		if(isHit()){
+			life--;
+			cout<<"ELET: "<<life<<endl;
+			//if(life<1)running=false;
+		}
 		represent();
 		Sleep(1000);
 		

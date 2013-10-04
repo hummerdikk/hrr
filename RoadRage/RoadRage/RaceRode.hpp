@@ -13,17 +13,16 @@ class RaceRoad{
 	vector <vector<unsigned char>> road;
 	unsigned short vert;
 	unsigned short hori;
-	Player* player;
+	unsigned short life;
 
 	bool isHit();
 	vector <vector<unsigned char>> generateRoad(const int& difficulty);
 	void represent();
 	
   public:
-	RaceRoad(/*Player* player*/);
-	~RaceRoad();
+	RaceRoad();
 	void play();
-	void roadStep();
+	//void roadStep();
 	void moveCar(const short& direction);
 	
 };
